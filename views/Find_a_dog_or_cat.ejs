@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Adopt A-Cat/Dog_Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/StyleSheet.css">
+
+
+</head>
+
+<body>
+  <div id="body-container">
+    <div id="content-wrap">
+
+  <div id=getCurrentDate></div>
+
+  <%-include("partials/Header.ejs")-%>
+  <%-include("partials/SideMenu.ejs")-%>
+
+    <div class="flex-container">
+
+        <div class="flex-container1">
+          <div class="description1">
+            <h1>Find a Dog or a Cat</h1>
+            <p>You can find your pet by using this form if you're seeking specific characteristics regarding your furry
+              friend.
+              Utilize the various filters, including species, breed, age, gender, and more, to focus on the
+              possibilities
+              that
+              best suit you.</p>
+          </div>
+
+          <form name="form" id="form" onsubmit="validateForm('findPets',event)" action="/Browse_Available_Pets"
+            method="POST">
+
+            <fieldset class="fieldset1">
+
+              <legend style="color:black;">
+                <h2> Find your friend!</h2>
+              </legend>
+
+              <label>Species:</label>
+              <label for="cat"><input type="radio" name="pet" id="cat" value="cat">Cat</label>
+              <label for="dog"><input type="radio" name="pet" id="dog" value="dog">Dog</label><br><br>
+
+
+              <label for="breed">Breed:&nbsp;</label>
+
+              <input type="text" placeholder="Enter breed preference" id="breed" name="breed"
+                onchange="disable('noPreferenceBreed')">
+              <input type="radio" id="noPreferenceBreed" name="breed" value="no preference" onchange="disable('breed')">
+              <label for="noPreferenceBreed">No preference</label><br><br>
+
+
+              <label>Age:</label>
+
+              <select name="Age">
+                <option value="less than 1 year">Less than 1 year</option>
+                <option value="1-3 years">1-3 years</option>
+                <option value="3-7 years">3-7 year</option>
+                <option value="7-10 years">7-10 years</option>
+                <option value="more than 10 years">More than 10 years</option>
+                <option value="no preference">No preference</option>
+              </select><br><br>
+
+              <label>Gender:</label>
+
+              <label for="male"><input type="radio" name="gender" value="male" id="male">Male</label>
+              <label for="female"><input type="radio" name="gender" value="female" id="female">Female</label>
+              <label for="noPreferenceGender"><input type="radio" name="gender" value="no preference"
+                  id="noPreferenceGender">No preference</label><br><br>
+
+
+              <label>Needs to be friendly with:</label>
+              <input type="checkbox" name="friend[]" value="children">Children
+              <input type="checkbox" name="friend[]" value="otherD">Other dogs
+              <input type="checkbox" name="friend[]" value="otherC">Other cats
+
+
+            </fieldset>
+
+            <div class="button" style="margin-bottom: 100px;">
+              <input class="mybutton" type="submit" onclick="validateData()" value="Find a friend">
+              <input class="mybutton" type="reset" value="Reset">
+            </div>
+          </form>
+        </div>
+    </div>
+
+  </div>
+    <%-include("partials/Footer.ejs")-%>
+  </div>
+      <script src="../scripts/JSsheet.js"></script>
+</body>
+
+
+</html>

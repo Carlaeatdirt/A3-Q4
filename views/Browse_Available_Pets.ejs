@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Adopt A-Cat/Dog_Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/StyleSheet.css">
+</head>
+
+<body>
+    <div id="body-container">
+        <div id="content-wrap">
+
+            <div id=getCurrentDate></div>
+
+            <%-include("partials/Header.ejs")-%>
+                <%-include("partials/SideMenu.ejs")-%>
+
+                    <div>
+
+                        <p class="intro">&nbsp;&nbsp;Here are the pets that match your search criteria.</p>
+                        <ul>
+                            <% if (pets.length > 0) { %>
+                                <% pets.forEach(function(pet) { 
+                                    const details = pet.split(':');
+                                %>
+                                    <li>
+                                        <h3>Species:</h3> <%= details[0] %><br>
+                                        <h3>Breed:</h3> <%= details[1] %><br>
+                                        <h3>Age:</h3> <%= details[2] %><br>
+                                        <h3>Gender:</h3> <%= details[3] %><br>
+                                        <h3>Social:</h3> <%= details[4] %><br>
+                                        <h3>Description:</h3> <%= details[5] %><br>
+                                    </li>
+                                
+                                <% }); %>
+                            <% } else { %>
+                                <p>No pets found matching your criteria.</p>
+                            <% } %>
+                               
+                        </ul>
+
+
+
+                    </div>
+        </div>
+        <%-include("partials/Footer.ejs")-%>
+    </div>
+    <script src="../scripts/JSsheet.js"></script>
+</body>
+
+
+</html>

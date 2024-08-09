@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Adopt A-Cat/Dog_Home</title>
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/styles/StyleSheet.css">
+
+</head>
+
+<body>
+
+    <div id="body-container">
+        <div id="content-wrap">
+    <div id=getCurrentDate></div>
+
+    <%-include("partials/Header.ejs")-%>
+    <%-include("partials/SideMenu.ejs")-%>
+        <div class="flex-container">
+
+                <div class="description1" style="margin-bottom:100px ;">
+                    <div>
+                        <h1 style="margin-bottom: 20px;margin-top: 50px">LogIn</h1>
+                        
+                        <form action="/login" method="post">
+                            <label for="username">Username: </label>
+                            <input type="text" id="username" name="username"  required><br><br>
+                            <label for="password" required>Password:</label>
+                            <input type="password" id="password" name="password" required><br><br>
+                            <input class="mybutton" type="submit" value="Login">
+                        </form>
+                        <% if (typeof message !== 'undefined') { %>
+                            <p><%= message %></p>
+                        <% } %>
+
+
+
+                    </div>
+                </div>
+        </div>
+    </div>
+        <%-include("partials/Footer.ejs")-%>
+        </div>
+            <script src="../scripts/JSsheet.js"></script>
+</body>
+
+
+</html>

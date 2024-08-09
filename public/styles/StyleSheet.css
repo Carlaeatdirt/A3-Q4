@@ -1,0 +1,250 @@
+#body-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+
+@media all and (max-width: 1000px) and (min-width: 360px) {
+    .description1 {
+        margin-bottom: 100px;
+    }
+
+    .title {
+        width: 300px;
+    }
+
+}
+
+body {
+    margin: 0;
+    overflow-y: scroll;
+    background-color: #f8f8f8;
+}
+
+#getCurrentDate {
+    font-family: Georgia;
+    color: black;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: -30px;
+    align-items: center;
+    flex-direction: start;
+    justify-content: center;
+}
+
+.banner {
+    padding: 0;
+    margin-top: 40px;
+    width: 100%;
+    color: #BFA18F;
+    background: url('https://as1.ftcdn.net/v2/jpg/02/61/37/08/1000_F_261370893_3FXrdROYSFQqUkCQWq2z7CdyTauzaGmT.jpg')repeat;
+}
+
+.title {
+    display: flex;
+    width: fit-content;
+    font-family: Georgia;
+    color: black;
+    font-size: 50px;
+    margin-right: -20px;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    flex-direction: start;
+    justify-content: center;
+}
+
+
+.img {
+    mix-blend-mode: multiply;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 10% center;
+    margin-left: -280px;
+
+}
+
+.menu {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding: 5px;
+    background-color: #9ed9e0;
+
+
+
+}
+
+.menu a {
+
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+
+.menu a:hover:not(.active) {
+    color: #c69f6c;
+    background-color: #faf3eb;
+}
+
+.dog-description {
+    border: solid 2px #dac9b6;
+    border-radius: 20px;
+    margin: 3px;
+    font-size: 10pt;
+    padding: 40px 10px;
+    color: #000000;
+    position: relative;
+}
+
+.circle {
+    float: right;
+
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    overflow: hidden;
+
+}
+
+.image {
+    border-radius: 50% 50% 50% 50%;
+    height: 95%;
+    width: 100%;
+    overflow: hidden;
+}
+
+li h3 {
+    display: inline;
+    color: #dac9b6;
+}
+
+li p {
+    display: inline;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
+    padding: 0 10px;
+}
+
+.flex-container {
+    gap: 10%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    margin-top: 55px;
+    max-width: 2000px;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.description1 {
+    margin-top: -50px;
+    margin-left: 20px;
+    max-width: 800px;
+    margin-bottom: 0px;
+}
+
+.fieldset1 {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    min-width: 226px;
+    border: 1px solid #b6a89b;
+}
+
+.fieldset2 {
+    border: 1px solid #b6a89b;
+    min-width: 160px;
+}
+
+textarea {
+    max-width: 600px;
+    height: 50px;
+    width: 100%;
+}
+
+
+.button {
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+
+}
+
+.mybutton {
+    background-color: #9ed9e0;
+    border: none;
+    color: black;
+    padding: 10px 30px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-width: 10px;
+    border: solid 3px #b6a89b;
+    border-radius: 5px;
+}
+
+.mybutton:hover {
+    color: #c69f6c;
+    background-color: #faf3eb;
+    transition: 0.7s;
+}
+
+
+.dog {
+    width: 300px;
+    height: 300px;
+    margin-left: 0px;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 700px;
+}
+
+span {
+    color: #b6a89b;
+    font-size: x-large;
+    font-weight: bold;
+
+}
+
+.disclamer {
+    display: flex;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+    margin-right: 100px;
+    height: fit-content;
+    width: fit-content;
+    border: 3px solid#9ed9e0;
+}
+
+
+.footer>a {
+    margin-top: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+.footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    background-color: #dac9b6;
+    text-align: center;
+    color: black;
+    bottom: 0;
+    position: absolute;
+
+}

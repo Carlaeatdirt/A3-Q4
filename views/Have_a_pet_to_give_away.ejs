@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Adopt A-Cat/Dog_Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/StyleSheet.css">
+</head>
+
+<body>
+  <div id="body-container">
+    <div id="content-wrap">
+      <div id=getCurrentDate></div>
+
+      <%-include("partials/Header.ejs")-%>
+      <%-include("partials/SideMenu.ejs")-%>
+        <div class="flex-container">
+
+            <div class="flex-container1">
+              <div class="description1">
+                <h1>Have a pet to give away</h1>
+                <p>If you are looking for a new home for your pet this page is for you. Fill the form by
+                  sharing the details of your pet such as the species, the breed, the gender and more. Make sure to
+                  include your
+                  details to contact you when your pet is rehomed.</p>
+              </div>
+
+              <form name="form" id="form" action="/registerPet" method="post" onsubmit="validateForm('findPets',event)">
+                <fieldset class="fieldset1">
+                  <legend style="color: black;">
+                    <h2>Give Your Pet Away</h2>
+                  </legend>
+                  <label>Species:</label>
+                  <label for="cat"><input type="radio" name="pet" id="cat" value="cat">Cat</label>
+                  <label for="dog"><input type="radio" name="pet" id="dog" value="dog">Dog</label><br><br>
+
+
+                  <label for="breed">Breed:</label>
+
+                  <input type="text" placeholder="Enter the breed" id="breed" name="breed"
+                    onchange="disable('noPreferenceBreed')"><br>
+                  <input type="radio" id="noPreferenceBreed" name="breed" value="mixed breed"
+                    onchange="disable('breed')">
+                  <label for="noPreferenceBreed">Mixed breed</label><br><br>
+
+
+                  <label>Age:</label>
+
+                  <select name="Age">
+                    <option value="less than 1 year">Less than 1 year</option>
+                    <option value="1-3 years">1-3 years</option>
+                    <option value="3-7 years">3-7 year</option>
+                    <option value="7-10 years">7-10 years</option>
+                    <option value="more than 10 years">More than 10 years</option>
+                    <option value="no preference">No preference</option>
+                  </select><br><br>
+
+                  <label>Gender:</label>
+                  <label for="male"><input type="radio" name="gender" value="male" id="male">Male</label>
+                  <label for="female"><input type="radio" name="gender" value="female"
+                      id="female">Female</label><br><br>
+
+
+                  <label> Is friendly with:</label>
+                  <input type="checkbox" name="friend[]" value="children">Children
+                  <input type="checkbox" name="friend[]" value="otherD">Other dogs
+                  <input type="checkbox" name="friend[]" value="otherC">Other cats <br><br>
+
+
+
+                  <label>Tell us more about your animal:</label><br>
+                  <textarea placeholder="My pet is..." id="petDes" name="petDes"></textarea><br>
+
+
+
+                  <fieldset class="fieldset2">
+                    <legend>
+                      <h3>Current owner information:</h3>
+                    </legend>
+                    <label for="fName">Family name of the owner:&nbsp;</label><input type="text"
+                      placeholder="First name" id="fName" name="fName">
+                    <p id="firstName"></p>
+                    <label for="lName">First name of the owner:&nbsp;</label><input type="text" placeholder="Last name"
+                      id="lName" name="lName">
+                    <p id="lastName"></p>
+                    <label for="email">Email:&nbsp;</label><input type="email" name="email" placeholder="Email"
+                      id="email">
+
+                  </fieldset>
+                </fieldset>
+
+                <div class="button">
+                  <input class="mybutton" type="submit" onclick="validateData()" value="Submit">
+                  <input class="mybutton" type="reset" value="Reset">
+                </div>
+              </form>
+              <% if (typeof message !=="undefined" ) { %>
+                <p>
+                  <%= message %>
+                </p>
+                <% } %>
+            </div>
+        </div>
+
+    </div>
+
+    <%-include("partials/Footer.ejs")-%>
+
+  </div>
+  <script src="../scripts/JSsheet.js"></script>
+</body>
+
+
+</html>

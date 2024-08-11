@@ -28,8 +28,11 @@ function validateForm(formName, event) {
             if (!form.elements[i].value.trim()) {
                 isValid = false;
        alert("Please enter a breed preference.");         
-    
                 break;
+            }
+
+            else{
+                isValid=true;
             }
     }
 }

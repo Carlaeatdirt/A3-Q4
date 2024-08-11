@@ -151,14 +151,12 @@ app.post("/login", (req, res) => {
 var lines =0;
 app.post("/registerPet", (req, res) => {
 
-    let lines;
     fs.readFile('available_pet_information.txt', 'utf8', (err, data) => {
         if (err) throw err;
-        if(lines===0){
-            lines=1;
-        }
-        else{ 
-            lines = data.split(/\r\n|\n/).length-1; 
+        if(lines ===0)
+            lines =1;
+        else{
+            lines = data.split(/\r\n|\n/).length -1;
         }
         
     });

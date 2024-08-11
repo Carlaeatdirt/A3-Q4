@@ -15,9 +15,8 @@
       <div id=getCurrentDate></div>
 
       <%-include("partials/Header.ejs")-%>
-      <%-include("partials/SideMenu.ejs")-%>
-        <div class="flex-container">
-
+        <%-include("partials/SideMenu.ejs")-%>
+          <div class="flex-container">
             <div class="flex-container1">
               <div class="description1">
                 <h1>Have a pet to give away</h1>
@@ -94,15 +93,15 @@
                 <div class="button">
                   <input class="mybutton" type="submit" onclick="validateData()" value="Submit">
                   <input class="mybutton" type="reset" value="Reset">
+                  <% if (typeof message !=="undefined" ) { %>
+                    <p>
+                      <%= message %>
+                    </p>
+                    <% } %>
                 </div>
               </form>
-              <% if (typeof message !=="undefined" ) { %>
-                <p>
-                  <%= message %>
-                </p>
-                <% } %>
             </div>
-        </div>
+          </div>
 
     </div>
 
